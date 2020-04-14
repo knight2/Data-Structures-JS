@@ -58,3 +58,57 @@ class Set {
     }
 
 }
+
+//Perform a union on two sets
+//A method in our Set will be called union
+// This method should take another Set as an argument
+// and return the union of the two sets, without duplicates.
+
+function Set(){
+    //collection will hold the set
+    let collection = [];
+
+    //has method will check for the presence of an element and return true or false
+    this.has = function(element){
+        return (collection.indexOf(element) !== -1);
+    };
+
+    //Values method will return values in set.
+    this.values = function() {
+        return collection;
+    };
+
+    //Add method will add an element to the set, if it is not a duplicate
+    this.add = function(element){
+        if (!this.has(element)){
+            collection.push(element);
+            return true;
+        }
+        return false;
+    };
+
+    // Remove method will remove an element from a set
+    this.remove = function(element){
+        if (this.has(element)){
+            let index = collection.indexOf(element);
+            collection.splice(index, 1);
+            return true;
+        }
+        return false;
+    };
+
+    // Size method will return the size of the set
+    this.size = function(){
+        return this.collection.length;
+    }
+
+    //Union method will combine two sets and return the union,
+    // without duplicates
+    this.union = function(anotherSet){
+        const newSet = new Set();
+        const addToSet = el => newSet.add(el);
+        this.values().forEach(addToSet);
+        anotherSet.values().forEach(addToSet);
+        return newSet;
+    }
+}
