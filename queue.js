@@ -31,3 +31,15 @@ function Queue(){
         return collection.length === 0;
     };
 }
+
+//Priority Queue
+//Special type of queue in which items may have additional information
+//which specifies their priority
+//Items with higher priority will override all others
+
+function PriorityQueue(){
+    this.collection = [];
+    this.printCollection = function(){
+        console.log(collection);
+    };
+}
