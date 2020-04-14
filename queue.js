@@ -42,4 +42,44 @@ function PriorityQueue(){
     this.printCollection = function(){
         console.log(collection);
     };
-}
+
+    //modifiy enqueue to consider priority
+    this.enqueue = function(item){
+        collection.push(item);
+    };
+
+
+    //helper function to determine which item to remove
+    this.findPriority = function(){
+        let values = this.collection.map(function(keys){
+            return keys[1];
+        });
+
+        var thePriority = Math.min.apply(null, values);
+        return this.collection.find(element => element[1] === thePriority)
+    };
+
+    this.dequeue = function(){
+        //set the item to be removed for highest priority
+        let removeItem = this.findPriority();
+
+        //Find the position to remove it from queue
+        let removePosition = this.collection.indexOf(removeItem);
+        this.collection.splice(removePosition, 1);
+
+        //Return only the item without priority level
+        return removeItem[0];
+    };
+
+    this.size = function(){
+        return collection.length;
+    };
+
+    this.front = function(){
+        return collection[0];
+    };
+
+    this.isEmpty = function(){
+        return collection.length === 0;
+    };
+};
