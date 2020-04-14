@@ -12,3 +12,23 @@ console.log(set1.has(1));
 //output: true
 console.log(set1.has(6));
 // output: false
+
+class Set {
+    constructor() {
+        // Collection will hold our set
+        this.collection = [];
+    }
+
+    //This method will check for the presence of an element and return
+    // true or false
+    has (element){
+        return this.collection.indexOf(element) !== -1;
+    }
+
+    //This method will return all the values in the set
+    values(){
+        return this.collection;
+    }
+
+    
+}
