@@ -164,6 +164,15 @@ function Set() {
         });
         return unionSet;
     };
-    // change code below this line
-    // change code above this line
+
+    this.intersection = function(otherSet){
+        let intersectionSet = new Set();
+        let firstSet = this.values();
+        firstSet.forEach(function(e){
+            if (otherSet.has(e)){
+                intersectionSet.add(e);
+            };
+        });
+        return intersectionSet;
+    };
 }
