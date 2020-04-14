@@ -5,3 +5,29 @@
 //Only the element at the front is allowed to be removed
 //You can use an array but we want to limit control.
 
+function Queue(){
+    var collection = [];
+    this.print = function(){
+        console.log(collection);
+    };
+
+    this.enqueue = function(item){
+        collection.push(item);
+    };
+
+    this.dequeue = function(){
+        return collection.shift();
+    };
+
+    this.front = function(){
+        return collection[0];
+    };
+
+    this.size = function(){
+        return collection.length;
+    };
+
+    this.isEmpty = function(){
+        return collection.length === 0;
+    };
+}
