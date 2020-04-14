@@ -30,5 +30,31 @@ class Set {
         return this.collection;
     }
 
-    
+
+    //Method that adds a value to the set as long
+    //as the data does not already exist.
+    add(data){
+        if (this.has(data)){
+            return false;
+        }
+        this.collection.push(data);
+        return true;
+    }
+
+
+    //removes a value from the set collection if it already exiss
+    remove(data){
+
+        if (this.collection.indexOf(data) !== -1){
+            this.collection.slice(this.collection.indexOf(data), 1);
+            return true;
+        };
+        return false;
+    }
+
+    //Method returns the size of the collection
+    size(){
+        return this.collection.length();
+    }
+
 }
