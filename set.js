@@ -375,4 +375,10 @@ function checkSet() {
     ];
     return result;
 }
-    
+
+//Using spread and notes with ES6 Sets
+function checkSet(set){
+    var setToArr = [...set];
+    return setToArr;
+ }
+ 
