@@ -356,3 +356,12 @@ function checkSet() {
   
   checkSet();
   
+
+  //Remove item from Set in ES6
+
+  function checkSet(){
+      let set = new Set([1,2,3,45]);
+      set.delete(2);
+      set.delete(5);
+      return set;
+  }
