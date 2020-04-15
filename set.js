@@ -5,15 +5,15 @@
 //The typical use of a set is to simply check for
 // the presence of an item.
 
-const set1 = new Set([1,2,3,5,5,2,0]);
-console.log(set1);
+const set14 = new Set([1,2,3,5,5,2,0]);
+console.log(set14);
 // output [1,2,3,5,0]
-console.log(set1.has(1));
+console.log(set14.has(1));
 //output: true
-console.log(set1.has(6));
+console.log(set14.has(6));
 // output: false
 
-class Set {
+class SetC {
     constructor() {
         // Collection will hold our set
         this.collection = [];
@@ -64,7 +64,7 @@ class Set {
 // This method should take another Set as an argument
 // and return the union of the two sets, without duplicates.
 
-function Set(){
+function Set11(){
     //collection will hold the set
     let collection = [];
 
@@ -119,7 +119,7 @@ function Set(){
 //Will represent all values that exist in both sets 
 //Takes another set as an argument, returns the intersection of both
 
-function Set() {
+function Set3() {
     // the var collection will hold the set
     var collection = [];
     // this method will check for the presence of an element and return true or false
@@ -182,7 +182,7 @@ function Set() {
 // and return the items present in the first set
 // that are absent in the second.
 
-function Set() {
+function Set2() {
     // the var collection will hold the set
     var collection = [];
     // this method will check for the presence of an element and return true or false
@@ -341,3 +341,18 @@ function Set() {
         return true;
     }
 }
+
+
+//Create and add Sets in ES6
+
+function checkSet() {
+    var set = new Set([1, 2, 3, 3, 2, 1, 2, 3, 1]);
+    set.add("Taco");
+    set.add("Cat");
+    set.add("Awesome");
+    console.log(Array.from(set));
+    return set;
+  }
+  
+  checkSet();
+  
