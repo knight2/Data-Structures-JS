@@ -9,5 +9,27 @@ var hash = string => {
 };
 var HashTable = function() {
   this.collection = {};
-  
+
+  this.add = function(key, val){
+      var theHash = hash(key);
+      if(!this.collection.hasOwnProperty(theHash)){
+          this.collection[theHash] = {};
+      }
+      this.collection[theHash][key] = val;
+  };
+
+  this.remove = function(key){
+      var hashedObj = this.collection[hash(key)];
+      if (hashedObj.hasOwnProperty(key)){
+          delete hashedObj[key];
+      }
+  }
+
+  this.lookup = function(key){
+      var theHash = hash(key);
+      if (this.collection.hasOwnProperty(theHash)){
+          return this.collection[theHash][key];
+      }
+      return null;
+  }
 };
