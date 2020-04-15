@@ -325,6 +325,19 @@ function Set() {
         });
         return differenceSet;
     };
-    // change code below this line
-    // change code above this line
+    
+    this.subset = function(otherSet){
+        let firstSet = this.values();
+
+        if(firstSet.size > otherSet.size){
+            return false;
+        }
+        
+        firstSet.forEach(function(e){
+            if(!otherSet.has(e)){
+                return false;
+            };
+        })
+        return true;
+    }
 }
