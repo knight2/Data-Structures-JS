@@ -365,3 +365,14 @@ function checkSet() {
       set.delete(5);
       return set;
   }
+
+//Using Has and size in ES6 sets
+  function checkSet(arrToBeSet, checkValue){
+    var set = new Set(arrToBeSet);
+    var result = [
+    set.has(checkValue),
+    set.size
+    ];
+    return result;
+}
+    
